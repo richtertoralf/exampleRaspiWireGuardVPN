@@ -7,11 +7,12 @@ WireGuard ist ein schnelles, einfaches und modernes VPN-Protokoll. Hier kannst d
 ## Idee ##
 ![Netzwerk](WireGuard_Gartenlaube.png)
 **Steuerung der Raspbery Pi und der angeschlossenen Geräte von unterwegs und von zu Hause, mit der Besonderheit, das die Raspberry Pi nur über das Mobilfunknetz erreichbar sind.**  
+- Server in der Cloud: Virtueller Linux Server (Ubuntu 20.04 LTS)
 - Raspberry Pi: Raspberry Pi OS
 - Smartphone 1: Android
 - Smartphone 2: IOS
-- Computer zu Hause: Windows 10
-- Computer im Keller: Linux mit GUI
+- Computer zu Hause auf dem Schreibtisch: Windows 10
+- Computer zu Hause im Keller: Linux mit GUI
 
 ## Ausgangssituation ##
 Es gibt nicht überall Internet per Glasfaser. In vielen Regionen komme ich nur über das Mobilfunknetz (per LTE) ins Internet. Die [IPV4-Adressen sind knapp](https://de.wikipedia.org/wiki/IPv4#Adressknappheit) und viele Mobilfunkanbieter stellen deshalb keine öffentlichen IP-Adressen zur Verfügung. Deshalb funktionieren die traditionellen Lösungen mit [DynDNS](https://de.wikipedia.org/wiki/Dynamisches_DNS) nicht mehr.  
