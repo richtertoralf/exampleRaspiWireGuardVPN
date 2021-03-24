@@ -99,3 +99,5 @@ Private IP-Adressbereiche werden nicht im Internet geroutet und können ohne Reg
 **Ich verwende im folgenden feste IP-Adressen für die Raspberry PI und auch die IoT-Geräte, wie z.B. eine Wetterstation oder eine IP-Kamera sollten feste IP-Adressen bekommen. In unserem VPN legen wir auch feste IP-Adressen an. Alles andere wäre nochmal eine andere Baustelle.**
 Ich nehme für den WireGuard Cloud-Server (ebenso zufällig und willkürlich, aber absichtlich) die Adresse **172.16.95.1/24** und nutze für das VPN bzw. die VPN-Endpunkte den Adressbereich **172.16.95.0/24**. Damit bekomme ich die IP-Adressen von **172.16.95.1 bis 172.16.95.254** für unser privates VPN-Subnetz.  
 Die IP-Adressen unseres LAN und VPN-Subnetzes müssen unterschiedlich sein. Ist das nicht der Fall, kommt es zu Konflikten und im schlimmsten Fall funktioniert die Sache gar nicht. 
+
+Die Anleitung wird in Kürze fortgeführt....
