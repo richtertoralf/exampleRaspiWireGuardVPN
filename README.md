@@ -79,3 +79,23 @@ wg genkey | tee keys/android1_private_key | wg pubkey > keys/android1_public_key
 wg genkey | tee keys/laptop1_private_key | wg pubkey > keys/laptop1_public_key &&   
 wg genkey | tee keys/pc1_private_key | wg pubkey > keys/pc1_public_key  
 ```
+## nochmal Theorie ##
+Ich habe gerade eine sehr gute Erklärung zu WireGuard auf dem [deutschen Portal ubuntuusers](https://wiki.ubuntuusers.de/WireGuard/) gefunden. Diese Lektuere lohnt sich.  
+Unser Beispiel findet sich hier [wiki.ubuntuusers.de/WireGuard/Client-Server_Architektur/](https://wiki.ubuntuusers.de/WireGuard/Client-Server_Architektur/).
+
+### Konfiguration und Aktivierung der WireGuard-Schnittstelle 
+Ich gehe den Weg über die Erstellung einer Konfigurationsdatei (wg0.conf) und der Nutzung von wg-quick!
+
+**Vorher aber noch bissl mehr Theorie zu den Netzwerkadressen:**  
+Für die Einrichtung von privaten Netzwerken wurden drei IP-Adressbereiche reserviert:  
+RESERVIERTER IP-ADRESSBEREICH | NETZWERKKLASSE  
+--------------- | ---------- 
+10.0.0.0 - 10.255.255.255 | Klasse A
+172.16.0.0 - 172.31.255.255 | Klasse B
+192.168.0.0 - 192.168.255.255 | Klasse C
+
+Private IP-Adressbereiche werden nicht im Internet geroutet und können ohne Registrierung in beliebig vielen privaten Netzwerken, also auch in unserem VPN verwendet werden. Alle anderen Adressen werden für bestimmte Zwecke genutzt oder im Internet geroutet. Die VPN-Adressen müssen sich von den bereits genutzten privaten Adressen unterscheiden!
+... unsere privaten Adressen, hinter der Fritz!Box, sind z.B. aktuell im Bereich **192.168.178.XXX**. Da hat jeder Routerhersteller so sein System, z.B. Ubiquiti 192.168.1.xxx, Huawei GigaCube 192.168.8.xxx...
+**Ich verwende im folgenden feste IP-Adressen für die Raspberry PI und auch die IoT-Geräte, wie z.B. eine Wetterstation oder eine IP-Kamera sollten feste IP-Adressen bekommen. In unserem VPN legen wir auch feste IP-Adressen an. Alles andere wäre nochmal eine andere Baustelle.**
+Ich nehme für den WireGuard Cloud-Server (ebenso zufällig und willkürlich, aber absichtlich) die Adresse **172.16.95.1/24** und nutze für das VPN bzw. die VPN-Endpunkte den Adressbereich **172.16.95.0/24**. Damit bekomme ich die IP-Adressen von **172.16.95.1 bis 172.16.95.254** für unser privates VPN-Subnetz.  
+Die IP-Adressen unseres LAN und VPN-Subnetzes müssen unterschiedlich sein. Ist das nicht der Fall, kommt es zu Konflikten und im schlimmsten Fall funktioniert die Sache gar nicht. 
