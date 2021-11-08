@@ -6,7 +6,7 @@ WireGuard ist ein schnelles, einfaches und modernes VPN-Protokoll. Hier kannst d
 **Hintergrundinfos zu WireGuard findest du hier [https://www.wireguard.com/](https://www.wireguard.com/)** 
 ## Idee ##
 ![Netzwerk](WireGuard_Gartenlaube.png)
-**Steuerung der Raspbery Pi und der angeschlossenen Geräte von unterwegs und von zu Hause, mit der Besonderheit, das die Raspberry Pi nur über das Mobilfunknetz erreichbar sind.**  
+**Steuerung der Raspbery Pi und der angeschlossenen Geräte von unterwegs und von zu Hause, mit der Besonderheit, das die Raspberry Pi nur über das Mobilfunknetz erreichbar sindund dein Computer nicht nur zu Hause, sondern ab und zu auch mal woanders steht, wo du dann keine Einstellungen im Router anpassen kannst.**  
 - Server in der Cloud: Virtueller Linux Server (Ubuntu 20.04 LTS)
 - Raspberry Pi: Raspberry Pi OS
 - Smartphone 1: Android
